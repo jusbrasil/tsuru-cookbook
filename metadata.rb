@@ -4,7 +4,7 @@ maintainer_email 'josh@firma8.com'
 license          'All rights reserved'
 description      'Installs/Configures tsuru'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.7.2'
+version          '0.7.3'
 depends           'apt'
 depends           'docker', '= 0.37.0'
 depends           'aufs', '= 0.1.1'

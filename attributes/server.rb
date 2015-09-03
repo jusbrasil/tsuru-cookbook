@@ -41,9 +41,12 @@ default['tsuru']['server']['auth']['hash-cost'] = 10
 # default['tsuru']['server']['auth']['oauth']['callback-port'] = nil
 
 ## Queue configuration
-default['tsuru']['server']['queue'] = 'redis'
-default['tsuru']['server']['redis-queue']['host'] = '127.0.0.1'
-default['tsuru']['server']['redis-queue']['port'] = 6379
+default['tsuru']['server']['queue']['mongo-url'] = '127.0.0.1:27017'
+default['tsuru']['server']['queue']['mongo-database'] = 'redis'
+
+## PubSub configuration
+default['tsuru']['server']['pubsub']['redis-host'] = '127.0.0.1'
+default['tsuru']['server']['pubsub']['redis-port'] = 'queuedb'
 # default['tsuru']['server']['redis-queue']['password'] = '' # blank for no password
 # default['tsuru']['server']['redis-queue']['db'] = 3
 
@@ -52,8 +55,9 @@ default['tsuru']['server']['redis-queue']['port'] = 6379
 # default['tsuru']['server']['quota']['apps-per-user'] = 'unlimited'
 
 ## Hipache
-default['tsuru']['server']['hipache']['domain'] = node['tsuru']['server']['cname']
-default['tsuru']['server']['hipache']['redis-server'] = '127.0.0.1:6379'
+default['tsuru']['server']['routers']['hipache']['type'] = 'hipache'
+default['tsuru']['server']['routers']['hipache']['domain'] = node['tsuru']['server']['cname']
+default['tsuru']['server']['routers']['hipache']['redis-server'] = '127.0.0.1:6379'
 
 ## Docker provisioner
 default['tsuru']['server']['provisioner'] = 'docker'
@@ -61,7 +65,6 @@ default['tsuru']['server']['docker']['collection'] = 'docker_containers'
 default['tsuru']['server']['docker']['repository-namespace'] = 'tsuru'
 default['tsuru']['server']['docker']['router'] = 'hipache'
 default['tsuru']['server']['docker']['deploy-cmd'] = '/var/lib/tsuru/deploy'
-default['tsuru']['server']['docker']['segregate'] = false
 default['tsuru']['server']['docker']['cluster']['mongo-url'] = '127.0.0.1:27017'
 default['tsuru']['server']['docker']['cluster']['mongo-database'] = 'cluster'
 default['tsuru']['server']['docker']['run-cmd']['bin'] = '/var/lib/tsuru/start'

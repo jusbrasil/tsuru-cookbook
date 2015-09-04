@@ -1,4 +1,3 @@
-
 default['gandalf-server']['bin-path'] = '/usr/bin/gandalf-ssh'
 default['gandalf-server']['git']['bare']['location'] = '/var/lib/gandalf/repositories'
 default['gandalf-server']['git']['bare']['template'] = '/home/git/bare-template'

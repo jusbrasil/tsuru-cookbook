@@ -37,7 +37,6 @@ end
 
 require 'yaml'
 config = node['tsuru']['server'].to_hash
-config['docker'].delete('servers') if config['docker']['segregate']
 file '/etc/tsuru/tsuru.conf' do
   action :create
   owner 'root'

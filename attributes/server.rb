@@ -73,7 +73,7 @@ default['tsuru']['server']['debug'] = false
 ## Routers - http://docs.tsuru.io/en/stable/reference/config.html#routers
 ## using hipache as default
 default['tsuru']['server']['routers']['hipache']['type'] = 'hipache'
-default['tsuru']['server']['routers']['hipache']['domain'] = node['tsuru']['server']['cname']
+default['tsuru']['server']['routers']['hipache']['domain'] = node['tsuru']['cname']
 default['tsuru']['server']['routers']['hipache']['redis-server'] = '127.0.0.1:6379'
 
 ## Provisioner

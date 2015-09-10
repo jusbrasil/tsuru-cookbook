@@ -44,9 +44,9 @@ default['tsuru']['server']['auth']['hash-cost'] = 10
 
 ## Queue configuration
 default['tsuru']['server']['queue']['mongo-url'] = '127.0.0.1:27017'
-default['tsuru']['server']['queue']['mongo-database'] = 'redis'
+default['tsuru']['server']['queue']['mongo-database'] = 'queuedb'
 default['tsuru']['server']['pubsub']['redis-host'] = '127.0.0.1'
-default['tsuru']['server']['pubsub']['redis-port'] = 'queuedb'
+default['tsuru']['server']['pubsub']['redis-port'] = 6379
 # default['tsuru']['server']['pubsub']['redis-password'] = nil
 # default['tsuru']['server']['pubsub']['redis-db'] = nil
 # default['tsuru']['server']['pubsub']['pool-max-idle-conn'] = nil
@@ -101,7 +101,7 @@ default['tsuru']['server']['docker']['cluster']['storage'] = 'mongodb'
 default['tsuru']['server']['docker']['cluster']['mongo-url'] = '127.0.0.1:27017'
 default['tsuru']['server']['docker']['cluster']['mongo-database'] = 'cluster'
 default['tsuru']['server']['docker']['run-cmd']['bin'] = '/var/lib/tsuru/start'
-default['tsuru']['server']['docker']['run-cmd']['port'] = '8888'
+default['tsuru']['server']['docker']['run-cmd']['port'] = 8888
 default['tsuru']['server']['docker']['ssh']['user'] = 'ubuntu'
 #default['tsuru']['server']['docker']['healing']['heal-nodes'] = false
 #default['tsuru']['server']['docker']['healing']['active-monitoring-interval'] = 0
